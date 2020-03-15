@@ -1,0 +1,1 @@
+Printf but more cooler
