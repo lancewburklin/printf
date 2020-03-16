@@ -7,16 +7,16 @@
  * Return: void
  */
 
-void _printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
-	char tmp;
-	int index;
-	int dict;
+	int rval, index, dict, tmp = 0;
 	va_list list;
 
 	Dictionary args[] = {
 		{'d', print_int},
 		{'i', print_int},
+		{'c', print_char},
+		{'s', print_string},
 		{'\0', NULL}
 	};
 
@@ -32,18 +32,19 @@ void _printf(const char *format, ...)
 			{
 				if (format[index] == args[dict].handle)
 				{
-					args[dict].func(list);
-					_putchar(' ');
+					rval = args[dict].func(list);
+					tmp = tmp + returnval;
 					break;
 				}
 			}
 		}
 		else
 		{
+			tmp = tmp + 1;
 			_putchar(format[index]);
 		}
 		index++;
 	}
-	_putchar('\n');
 	va_end(list);
+	return (tmp);
 }
