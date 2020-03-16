@@ -27,4 +27,6 @@ int print_char(va_list list);
 
 int print_string(va_list list);
 
+int print_arg(va_list list, int index, const char *format, int tmp);
+
 #endif
