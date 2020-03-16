@@ -39,3 +39,19 @@ int print_int(va_list list)
 	}
 	return (addvalue);
 }
+
+/**
+ * print_percent - prints percent
+ *@list: list of arguments
+ *
+ *Return: one
+ */
+
+int print_percent(va_list list)
+{
+	int useless = va_arg(list, int);
+	(void)useless;
+
+	_putchar('%');
+	return (1);
+}
