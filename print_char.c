@@ -24,9 +24,16 @@ int print_string(va_list args)
 {
 	int i;
 	char *letter = va_arg(args, char *);
+	char *null = "(null)";
 
-	if (letter == NULL)
-		return (0);
+	if (letter == NULL) /*Print (null) if NULL is passed to %s*/
+	{
+		for (i = 0; null[i]; i++)
+		{
+			_putchar(null[i]);
+		}
+		return (i);
+	}
 	for (i = 0; letter[i] != '\0'; i++)
 		_putchar(letter[i]);
 	i--;
