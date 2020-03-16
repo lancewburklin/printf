@@ -5,13 +5,14 @@
  *@list: agrument provided to print
  */
 
-void print_int(va_list list)
+int print_int(va_list list)
 {
 	/* Shift int to Ascii value of char */
 	int num = va_arg(list, int);
 	int negative = 0;
 	int revNum[10];
 	int index = 0;
+	int addvalue = 0;
 
 
 	if (num < 0)
@@ -19,6 +20,7 @@ void print_int(va_list list)
 		index++;
 		negative = 1;
 		_putchar('-');
+		addvalue = addvalue + 1;
 	}
 
 	for (; num % 10 != 0; index++)
@@ -32,5 +34,7 @@ void print_int(va_list list)
 	for (index--; negative ? index > 0 : index >= 0; index--)
 	{
 		_putchar(revNum[index] + 48);
+		addvalue = addvalue + 1;
 	}
+	return (addvalue);
 }
