@@ -7,6 +7,6 @@ int main(void)
 	char *stest = "TEST";
 
 	/* %d and %i test */
-	_printf("no1: %d no2: %i string: %s\n", DTEST, ITEST, stest);
+	_printf("no1: %d no2: %% string: %s\n", DTEST, "yes", stest);
 	return 0;
 }

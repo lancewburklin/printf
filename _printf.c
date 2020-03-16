@@ -66,7 +66,7 @@ int print_arg(va_list list, int index, const char *format, int tmp)
 	int useless = va_arg(list, int);
 
 	index--;
-
+	(void)useless;
 	for (; format[index] != ' '; index++)
 	{
 		tmp = tmp + 1;
