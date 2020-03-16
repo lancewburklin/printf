@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 				}
 			}
 			if (args[dict].handle == '\0')
-				rval += print_arg(list, index, format, tmp);
+				tmp = print_arg(list, index, format, tmp);
 		}
 		else
 		{
@@ -67,10 +67,11 @@ int print_arg(va_list list, int index, const char *format, int tmp)
 
 	index--;
 	(void)useless;
-	for (; format[index] != ' ' && format[index] != '\0'; index++)
+	if (format[index] != ' ' && format[index] != '\0')
 	{
-		tmp = tmp + 1;
+		tmp = tmp + 2;
 		_putchar(format[index]);
+		_putchar(format[index + 1]);
 	}
 	return (tmp);
 }
