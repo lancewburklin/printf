@@ -11,13 +11,17 @@
 typedef struct Dictionary
 {
 	char handle;
-	void (*func)(va_list list);
+	int (*func)(va_list list);
 }Dictionary;
 
 int _putchar(char c);
 
-void _printf(const char * format, ...);
+int _printf(const char * format, ...);
 
-void print_int(va_list list);
+int print_int(va_list list);
+
+int print_char(va_list list);
+
+int print_string(va_list list);
 
 #endif
