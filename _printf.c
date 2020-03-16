@@ -67,10 +67,12 @@ int print_arg(va_list list, int index, const char *format, int tmp)
 
 	index--;
 	(void)useless;
-	for (; format[index] != ' '; index++)
+	for (; format[index] != ' ' && format[index] != '\0'; index++)
 	{
 		tmp = tmp + 1;
 		_putchar(format[index]);
+		if (format[index + 1] == '%')
+		    break;
 	}
 	return (tmp);
 }
