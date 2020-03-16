@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+
 /**
  * _printf - print any arguments passed
  *@format: format to print
@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 				if (format[index] == args[dict].handle)
 				{
 					rval = args[dict].func(list);
-					tmp = tmp + returnval;
+					tmp = tmp + rval;
 					break;
 				}
 			}
