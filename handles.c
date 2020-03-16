@@ -3,6 +3,7 @@
 /**
  * print_int - prints an int
  *@list: agrument provided to print
+ * Return: Number of numbers
  */
 
 int print_int(va_list list)
