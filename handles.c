@@ -24,7 +24,7 @@ int print_int(va_list list)
 		addvalue = addvalue + 1;
 	}
 
-	for (; num % 10 != 0; index++)
+	for (; num != 0; index++)
 	{
 		revNum[index] = (num % 10) > 0
 			? num % 10
