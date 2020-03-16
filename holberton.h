@@ -6,17 +6,20 @@
 #include <stdlib.h>
 
 /**
- * Dictionary - pairs a handle char with a print funciton
+ * struct Dictionary - pairs a handle char with a print funciton
+ *
+ * @handle: Format specifier
+ * @func: The function
 */
 typedef struct Dictionary
 {
 	char handle;
 	int (*func)(va_list list);
-}Dictionary;
+} Dictionary;
 
 int _putchar(char c);
 
-int _printf(const char * format, ...);
+int _printf(const char *format, ...);
 
 int print_int(va_list list);
 
