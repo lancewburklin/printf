@@ -25,22 +25,18 @@ int _printf(const char *format, ...)
 			{
 				return (-1);
 			}
-			if (format[index + 1] == ' '
-			    && format[index + 2] == '\0')
+			if (format[index + 1] == ' ' && format[index + 2] == '\0')
 			{
 				return (-1);
 			}
-
 			index++;
 			func = get_func(format[index]);
-
 			if (func != NULL)
 			{
 				tmp += func(list);
 			}
 			else
 				tmp = print_arg(list, index, format, tmp);
-
 		}
 		else
 		{
