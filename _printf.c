@@ -27,13 +27,13 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
-
+			if (format[index] == '\0')
+				return (-1);
 			for (dict = 0; args[dict].handle != '\0'; dict++)
 			{
 				if (format[index] == args[dict].handle)
 				{
-					rval = args[dict].func(list);
-					tmp = tmp + rval;
+					tmp += args[dict].func(list);
 					break;
 				}
 			}
