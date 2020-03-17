@@ -22,16 +22,12 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			if (format[index + 1] == '\0')
-			{
 				return (-1);
-			}
 			if (format[index + 1] == ' ' && format[index + 2] == '\0')
-			{
 				return (-1);
-			}
 			index++;
 			func = get_func(format[index]);
-			if (func != NULL)
+			if (func != NULL && format[index] != '\0')
 			{
 				tmp += func(list);
 			}
