@@ -23,6 +23,11 @@ int print_int(va_list list)
 		_putchar('-');
 		addvalue = addvalue + 1;
 	}
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 
 	for (; num != 0; index++)
 	{
@@ -34,7 +39,7 @@ int print_int(va_list list)
 
 	for (index--; negative ? index > 0 : index >= 0; index--)
 	{
-		_putchar(revNum[index] + 48);
+		_putchar('0' + revNum[index]);
 		addvalue = addvalue + 1;
 	}
 	return (addvalue);
