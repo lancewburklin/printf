@@ -31,4 +31,6 @@ int print_percent(va_list list);
 
 int print_arg(va_list, int index, const char *format, int tmp);
 
+Dictionary *make_args(void);
+
 #endif
