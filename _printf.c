@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[index] == '%')
 		{
-       			if ( format[index + 1] == '\0')
+			if (format[index + 1] == '\0')
 			{
 				return (-1);
 			}
@@ -66,7 +66,7 @@ int (*get_func(char dict))(va_list)
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percent},
- 		{'\0', NULL}
+		{'\0', NULL}
 	};
 	int index = 0;
 
