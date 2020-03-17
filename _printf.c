@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int rval, index, dict, tmp = 0;
+	int index, dict, tmp = 0;
 	va_list list;
 	Dictionary args[] = {
 		{'d', print_int},
