@@ -14,11 +14,11 @@ int main(void)
 	unsigned int ui;
 	void *addr;
 
-	len = _printf("%d\n", NULL);
-	len2 = printf("%d\n", NULL);
+	len = _printf("%s: %s\n", "yes", "no");
+	len2 = printf("%s: %s\n", "yes", "no");
 	ui = (unsigned int)INT_MAX + 1024;
 	addr = (void *)0x7ffe637541f0;
-	_printf("Length:[%d, %i]\n", len, len);
+	_printf("Length: [%d, %i]\n", len, len);
 	printf("Length2:[%d, %i]\n", len2, len2);
 	len = _printf("Negative:[%d]\n", -762534);
 	len2 = printf("Negative:[%d]\n", -762534);

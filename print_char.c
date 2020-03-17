@@ -36,6 +36,6 @@ int print_string(va_list args)
 	}
 	for (i = 0; letter[i] != '\0'; i++)
 		_putchar(letter[i]);
-	i--;
+
 	return (i);
 }
