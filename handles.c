@@ -54,9 +54,7 @@ int print_int(va_list list)
 
 int print_percent(va_list list)
 {
-	int useless = va_arg(list, int);
-	(void)useless;
-
+	(void) list;
 	_putchar('%');
 	return (1);
 }
