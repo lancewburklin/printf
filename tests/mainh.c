@@ -9,20 +9,11 @@
  */
 int main(void)
 {
-	int len;
-	int len2;
+	int len = 1;
+	int len2 = 3;
 	unsigned int ui;
 	void *addr;
 
-<<<<<<< HEAD
-	len = _printf("%s: %c: % ", "yes\0no", 'c');
-	printf("\n");
-	len2 = printf("%s: %c: % ", "yes\0no", 'c');
-	printf("\n");
-=======
-	len = _printf("Let's try to printf a simple sentence.\n");
-	len2 = printf("Let's try to printf a simple sentence.\n");
->>>>>>> Lance
 	ui = (unsigned int)INT_MAX + 1024;
 	addr = (void *)0x7ffe637541f0;
 	_printf("Length:[%d, %i]\n", len, len);
