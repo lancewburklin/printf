@@ -1,0 +1,20 @@
+.TH man 2 "03 17 2020" "_printf manpage"
+.SH NAME
+.B _printf
+- Prints just like printf
+.SH SYNOPSIS
+An attempt to create a function that works exactly like printf.
+.SH DESCRIPTION
+This is just printf
+.SH OPTIONS
+-% - This is a flag that specifies the next datatype
+-d - Prints an inerger
+-i - Prints an interger
+-c - Prints a character
+-s - Prints a string
+.SH SEE ALSO
+.I printf
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Lance Burklin and Logan Scanlon
