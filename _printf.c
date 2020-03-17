@@ -28,8 +28,9 @@ static Dictionary args[] = {
 
 int _printf(const char *format, ...)
 {
-	int index, dict, tmp = 0;
+	int index, tmp = 0;
 	va_list list;
+
 	Dictionary *args = make_args();
 
 	if (format == NULL)
@@ -40,19 +41,26 @@ int _printf(const char *format, ...)
 	{
 		if (format[index] == '%')
 		{
-			index++;
-			if (format[index] == '\0')
-				return (-1);
-			for (dict = 0; args[dict].handle != '\0'; dict++)
+			if (format[index + 1] == '\0')
 			{
-				if (format[index] == args[dict].handle)
-				{
-					tmp += args[dict].func(list);
-					break;
-				}
+				return (-1);
 			}
-			if (args[dict].handle == '\0')
+			if (format[index + 1] == ' '
+			    && format[index + 2] == '\0')
+			{
+				return (-1);
+			}
+
+			index++;
+			func = get_func(format[index]);
+
+			if (func != NULL)
+			{
+				tmp += func(list);
+			}
+			else
 				tmp = print_arg(list, index, format, tmp);
+
 		}
 		else
 		{
@@ -63,6 +71,37 @@ int _printf(const char *format, ...)
 	}
 	va_end(list);
 	return (tmp);
+}
+
+/**
+ * get_func - gets the correct function to use
+ *@dict: test char
+ *
+ * Return: pointer to correct function
+ */
+
+int (*get_func(char dict))(va_list)
+{
+	Dictionary args[] = {
+		{'d', print_int},
+		{'i', print_int},
+		{'c', print_char},
+		{'s', print_string},
+		{'%', print_percent},
+		{'\0', NULL}
+	};
+	int index = 0;
+
+	while (args[index].handle  != '\0')
+	{
+		if (args[index].handle == dict)
+		{
+			return (args[index].func);
+		}
+		index++;
+	}
+
+	return (args[index].func);
 }
 
 /**
