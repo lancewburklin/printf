@@ -1,6 +1,25 @@
 #include "holberton.h"
 
 /**
+ * make_args - Makes the test arguments
+ * Return: The arguments
+ */
+
+Dictionary *make_args(void)
+{
+static Dictionary args[] = {
+	{'d', print_int},
+	{'i', print_int},
+	{'c', print_char},
+	{'s', print_string},
+	{'%', print_percent},
+	{'\0', NULL}
+};
+
+	return (args);
+}
+
+/**
  * _printf - print any arguments passed
  *@format: format to print
  *
@@ -11,8 +30,11 @@ int _printf(const char *format, ...)
 {
 	int index, tmp = 0;
 	va_list list;
-	int (*func)(va_list);
 
+	Dictionary *args = make_args();
+
+	if (format == NULL)
+		return (-1);
 	va_start(list, format);
 	index = 0;
 	while (format != NULL && format[index] != '\0')
