@@ -14,9 +14,9 @@ int main(void)
 	unsigned int ui;
 	void *addr;
 
-	len = _printf("%s: %c: %", NULL, NULL);
+	len = _printf("%s: %c: % ", "yes\0no", 'c');
 	printf("\n");
-	len2 = printf("%s: %c: %", NULL, NULL);
+	len2 = printf("%s: %c: % ", "yes\0no", 'c');
 	printf("\n");
 	ui = (unsigned int)INT_MAX + 1024;
 	addr = (void *)0x7ffe637541f0;
